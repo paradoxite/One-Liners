@@ -1,0 +1,1 @@
+assetfinder http://att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh -c 'gobuster dir -w path -u @ -s 200 -t 150 -H "X-Forwarded-For:127.0.0.1"'
